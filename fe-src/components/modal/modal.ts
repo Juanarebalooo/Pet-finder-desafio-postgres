@@ -158,6 +158,8 @@ font-size:25px;
     ) {
       alert("Tienes que completar todos los datos!");
     } else {
+      console.log("mandando reportData", reportData);
+
       state.reportFound(reportData, (data) => {
         alert(data.message);
         location.reload();
