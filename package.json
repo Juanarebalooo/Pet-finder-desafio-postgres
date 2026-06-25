@@ -9,6 +9,7 @@
     "start": "tsx ./be-src/index.ts"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.9.1",

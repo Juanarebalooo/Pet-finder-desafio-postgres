@@ -8,6 +8,7 @@ import * as jwt from "jsonwebtoken";
 import { index } from "./lib/algolia";
 import { transporter } from "./lib/nodemailer";
 import path from "path";
+import { sgMail } from "./lib/sendgrid";
 const URL = "https://pet-finder-desafio-postgres-production.up.railway.app";
 const secret = process.env.SECRETO;
 
@@ -197,7 +198,7 @@ app.post("/report-found", async (req, res) => {
     const pet = await Pets.findByPk(petId, { include: [User] });
     const petAsJson = pet.toJSON();
     const ownerEmail = petAsJson.user.email;
-    await transporter.sendMail({
+    await sgMail.send({
       from: process.env.GMAIL_USER,
       to: ownerEmail,
       subject: `¡Encontraron a ${petAsJson.name}!`,
@@ -223,7 +224,7 @@ app.post("/forgot-password", async (req, res) => {
     const token = jwt.sign({ id: userAuth.get("user_id") }, secret, {
       expiresIn: "1h",
     });
-    await transporter.sendMail({
+    await sgMail.send({
       from: process.env.GMAIL_USER,
       to: email,
       subject: "Recupera tu contraseña",
