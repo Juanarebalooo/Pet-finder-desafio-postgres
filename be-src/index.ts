@@ -8,7 +8,7 @@ import * as jwt from "jsonwebtoken";
 import { index } from "./lib/algolia";
 import { transporter } from "./lib/nodemailer";
 import path from "path";
-const URL = "https://pet-finder-desafio-postgres.onrender.com";
+const URL = "https://pet-finder-desafio-postgres-production.up.railway.app";
 const secret = process.env.SECRETO;
 
 function getSHA256ofString(text: string) {

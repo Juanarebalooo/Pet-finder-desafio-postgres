@@ -1,6 +1,7 @@
 import { goTo, handleRoute } from "./router";
 
-const API_BASE_URL = "https://pet-finder-desafio-postgres.onrender.com";
+const API_BASE_URL =
+  "https://pet-finder-desafio-postgres-production.up.railway.app";
 type coords = {
   lng: number;
   lat: number;
