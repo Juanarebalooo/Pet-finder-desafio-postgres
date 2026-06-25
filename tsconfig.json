@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "Esnext",
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
