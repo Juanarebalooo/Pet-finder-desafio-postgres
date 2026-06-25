@@ -148,6 +148,8 @@ font-size:25px;
     console.log(reportData.info);
   });
   const sendButtonEl = modal.querySelector(".send__button") as HTMLElement;
+  console.log(sendButtonEl);
+
   sendButtonEl.addEventListener("click", () => {
     if (
       reportData.finderName === "" ||
